@@ -1,8 +1,20 @@
 {
+  "watch": [
+    "./templates/**/*.html"
+  ],
+  "scripts": {
+    "watch": "cp ./node_modules/htmx.org/dist/htmx.min.js ./static/js/htmx.min.js; npx tailwindcss -i ./static/css/styles.css -o ./static/css/styles.min.css --watch",
+    "build": "postcss ./static/css/styles.css -o ./static/css/styles.min.css; cp ./node_modules/htmx.org/dist/htmx.min.js ./static/js/htmx.min.js"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
+    "npm-watch": "^0.11.0",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
-    "tailwindcss": "^3.0.15"
+    "tailwind-watch": "^0.0.6",
+    "tailwindcss": "^3.0.16"
+  },
+  "dependencies": {
+    "htmx.org": "^1.6.1"
   }
 }
